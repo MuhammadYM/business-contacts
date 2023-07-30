@@ -1,0 +1,12 @@
+version: '3' # specify the version of the Compose file format
+
+services: # list the different apps you’d like to run at the same time
+  api: # service for the server
+    build: ./server # path to the Dockerfile for building the server
+    ports:
+      - "3000:3000" # expose port 3000 on the host and map it to port 3000 in the container
+
+  client: # service for the client
+    build: ./client # path to the Dockerfile for building the client
+    ports:
+      - "1234:1234" # expose port 1234 on the host and map it to port 1234 in the container
